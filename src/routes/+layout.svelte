@@ -1,5 +1,14 @@
 <script>
-    import "../app.css";
+	import SideBarNavigation from './../components/SideBarNavigation.svelte';
+	import '../app.css';
+	import Header from './../components/Header.svelte';
 </script>
 
-<slot />
+<div class="flex">
+	<SideBarNavigation />
+	<div class="p-10 w-full bg-violet-50">
+		<Header />
+
+		<slot />
+	</div>
+</div>
