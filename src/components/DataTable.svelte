@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
+
 	import { ChevronLeft, ChevronRight, Icon } from 'svelte-hero-icons';
 
 	export let tableHeaders: string[];
@@ -95,6 +98,7 @@
 									</a>
 									{#each Array(numberOfPage) as _, idx}
 										<a
+											data-sveltekit-prefetch
 											href={`/software?currentPage=${idx + 1}`}
 											class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
 										>
