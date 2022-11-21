@@ -1,21 +1,20 @@
-<script>
-	import DataTable from './../../components/DataTable.svelte';
-	const take = 10;
+<script lang="ts">
+	import DataTable from '../../components/DataTable.svelte';
 	const currentPage = 1;
 
 	let softwareTableHeaders = ['Room Number', 'Master Type', 'Location'];
-	let softwares = [
-		{ id: '1', softwareName: 'test', currentLicense: 'true', group: 'autocad' },
-		{ id: '2', softwareName: 'test2', currentLicense: 'false', group: 'autocad' },
-		{ id: '3', softwareName: 'test3', currentLicense: 'true', group: 'autocad' }
-	];
+	export let data;
+	const take = data.data.take;
+	const { softwareCount } = data.data.softwareCount;
+	const { softwares } = data.data.softwares;
+	const numberOfPage = Math.ceil(softwareCount / take);
 </script>
 
 <DataTable
 	tableHeaders={softwareTableHeaders}
 	dataCollection={softwares}
-	numberOfPage={1}
-	allDataCount={softwares.length}
+	{numberOfPage}
+	allDataCount={softwareCount}
 	{currentPage}
 	{take}
 />
