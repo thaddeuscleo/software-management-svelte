@@ -4,8 +4,8 @@ import { gql, request } from 'graphql-request';
 export async function load({ url }: { url: any }) {
 	const take = 10;
 
-	let currentPage = parseInt(url.searchParams.get('currentPage'));
-	currentPage = url.searchParams.get('currentPage') === undefined ? 1 : currentPage;
+	let param = url.searchParams.get('currentPage')
+	let currentPage = param === null ? 1 : parseInt(param);
 	const skip = (currentPage - 1) * take;
 
 	const query = gql`
@@ -37,7 +37,6 @@ export async function load({ url }: { url: any }) {
 
 	const softwares = await request(PUBLIC_GRAPHQL_ENDPOINT, query, variables);
 
-	// console.log(softwares);
 	return {
 		softwares,
 		softwareCount: await request(PUBLIC_GRAPHQL_ENDPOINT, countQuery, variables),
