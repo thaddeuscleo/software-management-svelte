@@ -10,7 +10,6 @@
 	};
 </script>
 
-
 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
 	<div class="px-4 py-5 sm:px-6">
 		<h3 class="text-lg leading-6 font-medium text-gray-900">Applicant Information</h3>
@@ -50,7 +49,7 @@
 						<li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
 							<div class="w-0 flex-1 flex items-center">
 								<!-- Heroicon name: solid/paper-clip -->
-								<Icon src="{PaperClip}" class="flex-shrink-0 h-5 w-5 text-gray-400" />
+								<Icon src={PaperClip} class="flex-shrink-0 h-5 w-5 text-gray-400" />
 								<span class="ml-2 flex-1 w-0 truncate"> resume_back_end_developer.pdf </span>
 							</div>
 							<div class="ml-4 flex-shrink-0">
@@ -60,7 +59,7 @@
 						<li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
 							<div class="w-0 flex-1 flex items-center">
 								<!-- Heroicon name: solid/paper-clip -->
-								<Icon src="{PaperClip}" class="flex-shrink-0 h-5 w-5 text-gray-400" />
+								<Icon src={PaperClip} class="flex-shrink-0 h-5 w-5 text-gray-400" />
 								<span class="ml-2 flex-1 w-0 truncate"> coverletter_back_end_developer.pdf </span>
 							</div>
 							<div class="ml-4 flex-shrink-0">

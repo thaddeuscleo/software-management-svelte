@@ -35,10 +35,9 @@ export async function load({ url }: { url: any }) {
 	`;
 
 	return {
-		data: {
-			softwares: await request(PUBLIC_GRAPHQL_ENDPOINT, query, variables),
-			softwareCount: await request(PUBLIC_GRAPHQL_ENDPOINT, countQuery, variables),
-			take
-		}
+		softwares: await request(PUBLIC_GRAPHQL_ENDPOINT, query, variables),
+		softwareCount: await request(PUBLIC_GRAPHQL_ENDPOINT, countQuery, variables),
+		currentPage,
+		take
 	};
 }
