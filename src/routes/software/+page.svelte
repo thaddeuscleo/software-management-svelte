@@ -3,15 +3,13 @@
 
 	export let data: any;
 	const take = data.take;
-	const { softwareCount } = data.softwareCount
+	const { softwareCount } = data.softwareCount;
 	const numberOfPage = Math.ceil(softwareCount / take);
 	const softwareTableHeaders = ['Room Number', 'Master Type', 'Location', 'Detail'];
-	
+
 	$: currentPage = data.currentPage;
 	$: ({ softwares } = data.softwares);
-
 </script>
-
 
 <DataTable
 	tableHeaders={softwareTableHeaders}

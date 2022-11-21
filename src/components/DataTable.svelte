@@ -90,8 +90,10 @@
 									aria-label="Pagination"
 								>
 									<a
-										href="/"
-										class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+										href={`/software?currentPage=${currentPage - 1}`}
+										class="{currentPage == 1
+											? 'pointer-events-none bg-slate-300'
+											: ''} relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
 									>
 										<span class="sr-only">Previous</span>
 										<Icon src={ChevronLeft} class="h-5 w-5" aria-hidden="true" />
@@ -100,14 +102,18 @@
 										<a
 											data-sveltekit-prefetch
 											href={`/software?currentPage=${idx + 1}`}
-											class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
+											class="{idx + 1 != currentPage
+												? 'bg-white'
+												: 'text-white bg-indigo-500 hover:bg-indigo-600'} relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50"
 										>
 											{idx + 1}
 										</a>
 									{/each}
 									<a
-										href="/"
-										class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+										href={`/software?currentPage=${currentPage + 1}`}
+										class="{currentPage == numberOfPage
+											? 'pointer-events-none bg-slate-300'
+											: ''} relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
 									>
 										<span class="sr-only">Next</span>
 										<Icon src={ChevronRight} class="h-5 w-5" aria-hidden="true" />
