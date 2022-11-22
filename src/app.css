@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --toastBackground: white;
+    --toastColor: #424242;
+    --toastBarBackground: blue;
+    --toastBorderRadius: .5rem;
+}
