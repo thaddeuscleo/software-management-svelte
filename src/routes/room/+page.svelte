@@ -1,5 +1,5 @@
 <script>
-	import DataTable from './../../components/DataTable.svelte';
+	import SoftwareDataTable from '../../components/SoftwareDataTable.svelte';
 
 	const take = 10;
 	const currentPage = 1;
@@ -12,7 +12,7 @@
 	];
 </script>
 
-<DataTable
+<SoftwareDataTable
 	tableHeaders={softwareTableHeaders}
 	dataCollection={softwares}
 	numberOfPage={1}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import DataTable from '../../components/DataTable.svelte';
+	import SoftwareDataTable from "./../../components/SoftwareDataTable.svelte";
 
 	export let data: any;
 	const take = data.take;
@@ -11,7 +11,7 @@
 	$: ({ softwares } = data.softwares);
 </script>
 
-<DataTable
+<SoftwareDataTable
 	tableHeaders={softwareTableHeaders}
 	dataCollection={softwares}
 	{numberOfPage}
