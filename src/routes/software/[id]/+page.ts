@@ -22,7 +22,7 @@ export async function load({ params }: { params: any }) {
 		}
 	`;
 
-	let software = await request(PUBLIC_GRAPHQL_ENDPOINT, query, {
+	const software = await request(PUBLIC_GRAPHQL_ENDPOINT, query, {
 		id: params.id
 	});
 

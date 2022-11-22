@@ -4,8 +4,8 @@ import { gql, request } from 'graphql-request';
 export async function load({ url }: { url: any }) {
 	const take = 10;
 
-	let param = url.searchParams.get('currentPage');
-	let currentPage = param === null || param <= 0 ? 1 : parseInt(param);
+	const param = url.searchParams.get('currentPage');
+	const currentPage = param === null || param <= 0 ? 1 : parseInt(param);
 	const skip = (currentPage - 1) * take;
 
 	const query = gql`
