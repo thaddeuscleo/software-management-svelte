@@ -1,8 +1,7 @@
 import { PUBLIC_GRAPHQL_ENDPOINT } from '$env/static/public';
 import request, { gql } from 'graphql-request';
 
-export async function load({params}: {params: any}) {
-
+export async function load({ params }: { params: any }) {
 	const query = gql`
 		query get_software($id: String!) {
 			software(id: $id) {
@@ -27,7 +26,7 @@ export async function load({params}: {params: any}) {
 		id: params.id
 	});
 
-    return {
-        software
-    }
+	return {
+		software
+	};
 }

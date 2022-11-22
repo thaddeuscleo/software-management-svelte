@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SoftwareDataTable from "./../../components/SoftwareDataTable.svelte";
+	import SoftwareDataTable from './../../components/SoftwareDataTable.svelte';
 
 	export let data: any;
 	const take = data.take;
