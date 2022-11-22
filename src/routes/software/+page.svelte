@@ -5,7 +5,7 @@
 	const take = data.take;
 	const { softwareCount } = data.softwareCount;
 	const numberOfPage = Math.ceil(softwareCount / take);
-	const softwareTableHeaders = ['Room Number', 'Master Type', 'Location', 'Detail'];
+	const softwareTableHeaders = ['Room Number', 'Master Type', 'Location'];
 
 	$: currentPage = data.currentPage;
 	$: ({ softwares } = data.softwares);

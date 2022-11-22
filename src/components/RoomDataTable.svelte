@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { ChevronLeft, ChevronRight, Icon } from "svelte-hero-icons";
+	import { ChevronLeft, ChevronRight, Icon } from 'svelte-hero-icons';
 
-
-    const tableHeaders = ['Room Number', 'Detail']
-    export let dataCollection: any[]; 
-    export let allDataCount: number;
+	const tableHeaders = ['Room Number'];
+	export let dataCollection: any[];
+	export let allDataCount: number;
 	export let numberOfPage: number;
 	export let currentPage: number;
 	export let take: number;
@@ -25,6 +24,9 @@
 									{header}
 								</th>
 							{/each}
+							<th scope="col" class="relative px-6 py-3">
+								<span class="sr-only">Edit</span>
+							</th>
 						</tr>
 					</thead>
 					<tbody>
