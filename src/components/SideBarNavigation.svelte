@@ -1,25 +1,25 @@
 <script lang="ts">
-	import { Calendar, ChartBar, Folder, Home, Icon, Inbox, User } from 'svelte-hero-icons';
+	import { ChartBar, Chip, Cube, Document, Home, Icon, Inbox } from 'svelte-hero-icons';
 
 	const navigationList = [
 		{ name: 'Dashboard', icon: Home, href: '/', count: 4, current: false },
 		{
 			name: 'Softwares',
-			icon: User,
+			icon: Chip,
 			href: '/software?currentPage=1',
 			count: 3,
 			current: false
 		},
 		{
 			name: 'Rooms',
-			icon: Folder,
+			icon: Cube,
 			href: '/room?currentPage=1',
 			count: 4,
 			current: false
 		},
 		{
 			name: 'Courses',
-			icon: Calendar,
+			icon: Document,
 			href: '/course',
 			count: 4,
 			current: false

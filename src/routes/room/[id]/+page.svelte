@@ -1,5 +1,8 @@
 <script>
-	import { Icon, PaperClip } from 'svelte-hero-icons';
+	import { Icon, Chip } from 'svelte-hero-icons';
+
+	export let data;
+	const { room } = data;
 </script>
 
 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
@@ -10,54 +13,28 @@
 	<div class="border-t border-gray-200 px-4 py-5 sm:p-0">
 		<dl class="sm:divide-y sm:divide-gray-200">
 			<div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-				<dt class="text-sm font-medium text-gray-500">Full name</dt>
-				<dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Margot Foster</dd>
+				<dt class="text-sm font-medium text-gray-500">Room Name</dt>
+				<dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{room.roomNumber}</dd>
 			</div>
 			<div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-				<dt class="text-sm font-medium text-gray-500">Application for</dt>
-				<dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Backend Developer</dd>
-			</div>
-			<div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-				<dt class="text-sm font-medium text-gray-500">Email address</dt>
-				<dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">margotfoster@example.com</dd>
-			</div>
-			<div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-				<dt class="text-sm font-medium text-gray-500">Salary expectation</dt>
-				<dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">$120,000</dd>
-			</div>
-			<div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-				<dt class="text-sm font-medium text-gray-500">About</dt>
+				<dt class="text-sm font-medium text-gray-500">Room Note</dt>
 				<dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-					Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa
-					consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud
-					in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit
-					deserunt qui eu.
+					-
 				</dd>
 			</div>
+
 			<div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-				<dt class="text-sm font-medium text-gray-500">Attachments</dt>
+				<dt class="text-sm font-medium text-gray-500">Rooms</dt>
 				<dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-					<ul class="border border-gray-200 rounded-md divide-y divide-gray-200">
-						<li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-							<div class="w-0 flex-1 flex items-center">
-								<!-- Heroicon name: solid/paper-clip -->
-								<Icon src={PaperClip} class="flex-shrink-0 h-5 w-5 text-gray-400" />
-								<span class="ml-2 flex-1 w-0 truncate"> resume_back_end_developer.pdf </span>
-							</div>
-							<div class="ml-4 flex-shrink-0">
-								<a href="/" class="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>
-							</div>
-						</li>
-						<li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-							<div class="w-0 flex-1 flex items-center">
-								<!-- Heroicon name: solid/paper-clip -->
-								<Icon src={PaperClip} class="flex-shrink-0 h-5 w-5 text-gray-400" />
-								<span class="ml-2 flex-1 w-0 truncate"> coverletter_back_end_developer.pdf </span>
-							</div>
-							<div class="ml-4 flex-shrink-0">
-								<a href="/" class="font-medium text-indigo-600 hover:text-indigo-500"> Download </a>
-							</div>
-						</li>
+					<ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+						{#each room.softwares as software}
+							<li class="border border-gray-200 col-span-1 bg-white rounded-lg">
+								<div class="w-full flex items-center justify-between p-4 space-x-3">
+									<Icon src={Chip} class="flex-shrink-0 h-5 w-5 text-gray-400" />
+									<span class="ml-2 flex-1 w-0 text-center truncate"> {software.softwareName} </span>
+								</div>
+							</li>
+						{/each}
 					</ul>
 				</dd>
 			</div>
