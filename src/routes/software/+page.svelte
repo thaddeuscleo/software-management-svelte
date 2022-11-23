@@ -7,7 +7,6 @@
 	$: ({ softwares } = data.softwares);
 </script>
 
-
 <SoftwareDataTable
 	dataCollection={softwares}
 	{numberOfPage}
