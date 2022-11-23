@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ChartBar, Chip, Cube, Document, Home, Icon, Inbox } from 'svelte-hero-icons';
+	import { ChartBar, Chip, Cube, Document, Home, Icon, Inbox, LightningBolt } from 'svelte-hero-icons';
 
 	const navigationList = [
 		{ name: 'Dashboard', icon: Home, href: '/', count: 4, current: false },
@@ -39,7 +39,7 @@
 	<div class="flex flex-col w-64 min-h-screen sticky top-0">
 		<div class="flex flex-col flex-grow pt-8 pb-4 bg-white overflow-y-auto">
 			<div class="flex items-center flex-shrink-0 px-4">
-				<img class="h-8 w-auto" src="#" alt="Workflow" />
+				<Icon src={LightningBolt} class="h-8" alt="Workflow" />
 			</div>
 			<div class="mt-5 flex-grow flex flex-col">
 				<nav class="flex-1 px-2 bg-white space-y-1" aria-label="Sidebar">
