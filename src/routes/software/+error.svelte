@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { Exclamation, Icon, X } from 'svelte-hero-icons';
+	import { Exclamation, Icon } from 'svelte-hero-icons';
 </script>
 
 <div class="bg-red-600 rounded-md">
@@ -12,9 +12,7 @@
 				</span>
 				<p class="ml-3 font-medium text-white truncate">
 					<span class="md:hidden">We announced a new product!</span>
-					<span class="hidden md:inline"
-						>{$page.error?.message}</span
-					>
+					<span class="hidden md:inline">{$page.error?.message}</span>
 				</p>
 			</div>
 		</div>

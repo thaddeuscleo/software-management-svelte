@@ -1,7 +1,8 @@
 <script lang="ts">
+	import type { Room } from '$lib/models/room';
 	import { Chip, Icon } from 'svelte-hero-icons';
 
-	export let room: any;
+	export let room: Room;
 </script>
 
 <div class="bg-white shadow overflow-hidden sm:rounded-lg">

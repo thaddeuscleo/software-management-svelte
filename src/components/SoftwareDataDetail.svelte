@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { Clipboard, Cube, Icon } from 'svelte-hero-icons';
 	import { SvelteToast, toast } from '@zerodevx/svelte-toast';
+	import type { Software } from '$lib/models/software';
 
-	export let software: any;
+	export let software: Software;
 
 	const copyToClipboard = () => {
 		navigator.clipboard.writeText(software.installerPath);

@@ -1,8 +1,9 @@
 <script lang="ts">
+	import type { Software } from '$lib/models/software';
 	import { ChevronLeft, ChevronRight, Icon } from 'svelte-hero-icons';
 
 	const tableHeaders: string[] = ['Room Number', 'Master Type', 'Location'];
-	export let dataCollection: any[];
+	export let dataCollection: Software[];
 	export let allDataCount: number;
 	export let numberOfPage: number;
 	export let currentPage: number;

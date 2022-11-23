@@ -1,7 +1,13 @@
 import { PUBLIC_GRAPHQL_ENDPOINT } from '$env/static/public';
 import request, { gql } from 'graphql-request';
 
-export async function load({ params }: { params: any }) {
+export async function load({
+	params
+}: {
+	params: {
+		id: number;
+	};
+}) {
 	const query = gql`
 		query get_room($id: String!) {
 			room(id: $id) {

@@ -1,8 +1,9 @@
 <script lang="ts">
+	import type { Room } from '$lib/models/room';
 	import { ChevronLeft, ChevronRight, Icon } from 'svelte-hero-icons';
 
 	const tableHeaders = ['Room Number'];
-	export let dataCollection: any[];
+	export let dataCollection: Room[];
 	export let allDataCount: number;
 	export let numberOfPage: number;
 	export let currentPage: number;
