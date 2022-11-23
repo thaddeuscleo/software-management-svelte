@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { ChevronLeft, ChevronRight, Icon } from 'svelte-hero-icons';
 
-	export let tableHeaders: string[];
+	const tableHeaders: string[] = ['Room Number', 'Master Type', 'Location'];
 	export let dataCollection: any[];
 	export let allDataCount: number;
 	export let numberOfPage: number;

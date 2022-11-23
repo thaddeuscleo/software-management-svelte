@@ -1,4 +1,5 @@
 import { PUBLIC_GRAPHQL_ENDPOINT } from '$env/static/public';
+import { error } from '@sveltejs/kit';
 import { gql, request } from 'graphql-request';
 
 export async function load({ url }: { url: any }) {
@@ -35,12 +36,21 @@ export async function load({ url }: { url: any }) {
 		}
 	`;
 
-	const softwares = await request(PUBLIC_GRAPHQL_ENDPOINT, query, variables);
+	const { softwares } = await request(PUBLIC_GRAPHQL_ENDPOINT, query, variables).catch(handleRequestError);
+	const { softwareCount } = await request(PUBLIC_GRAPHQL_ENDPOINT, countQuery, variables).catch(handleRequestError);
+	const numberOfPage = Math.ceil(softwareCount / take);
 
 	return {
 		softwares,
-		softwareCount: await request(PUBLIC_GRAPHQL_ENDPOINT, countQuery, variables),
+		softwareCount,
 		currentPage,
-		take
+		take,
+		numberOfPage
 	};
 }
+
+const handleRequestError = () => {
+	throw error(500, {
+		message: "We currently can't Process your request please contact your administrator"
+	})
+};
